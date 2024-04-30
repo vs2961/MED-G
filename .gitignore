@@ -1,0 +1,7 @@
+node_modules/
+.vscode/
+.next
+venv/
+*.swp
+__pycache__/
+next-env.d.ts

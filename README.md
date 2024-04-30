@@ -1,25 +1,9 @@
-# How to Integrate Flask Framework with Next.js
+# Setting up your environment
 
-In this article, you will learn how to integrate a Flask API project with Next.js and deploy them on Vercel. Traditionally, Vercel primarily supported a Node.js serverless runtime, which required writing API logic in JavaScript or TypeScript. However, Vercel has recently introduced support for other runtimes, including Golang, Ruby, Node.js, and Python.
+You will need Node.js, pnpm, and Python installed on your computer.
 
-![How to Integrate Flask Framework with Next.js](https://codevoweb.com/wp-content/uploads/2023/06/How-to-Integrate-Flask-Framework-with-Next.js.webp)
+After cloning the repo, create a python virtual environement with `python3 -m venv venv`.
 
-## Topics Covered
+To run the app, enter the virtual environment with `source venv/bin/activate` from within the root directory of the repo and then `pnpm dev`. 
 
-- Running the Flask and Next.js Projects
-- Setting up the Next.js and Flask Projects
-    - Setting up the Next.js Project
-    - Setting up the Flask Project
-    - Forwarding Requests to the Flask App
-    - Testing the Projects in the Development Environment
-- Deploying the Projects to Vercel
-- Building a Todo List CRUD API with Flask
-- Building the Todo List Frontend with Next.js
-    - Making HTTP Requests to the Flask Server
-    - Creating the Todo List Form Component
-    - Creating the Todo Item Component
-    - Displaying the Components in a Page File
-- Redeploying the Project to Vercel
-- Conclusion
-
-Read the entire article here: [https://codevoweb.com/how-to-integrate-flask-framework-with-nextjs/](https://codevoweb.com/how-to-integrate-flask-framework-with-nextjs/)
+Find more detailed instructions from this article: [https://codevoweb.com/how-to-integrate-flask-framework-with-nextjs/](https://codevoweb.com/how-to-integrate-flask-framework-with-nextjs/)
