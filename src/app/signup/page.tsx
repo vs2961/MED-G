@@ -24,7 +24,7 @@ const Signup: React.FC = () => {
           <Textfield name="email_confirm" label="Confirm Email Address" />
           <Textfield name="password" label="Password" />
           <Textfield name="password_confirm" label="Confirm Password" />
-          <Button name="create" label="Create Account" size="w-60" className="" />
+          <Button name="create" label="Create Account" size="w-60" className="mb-10" />
         </div>
       </form>
     </Navigation>

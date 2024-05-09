@@ -62,7 +62,7 @@ function Navigation({ children }: { children: React.ReactNode }) {
         </div>
       </nav>
       <div
-        className="h-full w-full mt-16 bg-[#364A71]"
+        className="h-full w-full mt-16 bg-[#364A71] overflow-y-auto overflow-x-auto"
       >
         {children}
       </div>
