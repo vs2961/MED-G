@@ -45,7 +45,12 @@ function Navigation({ children }: { children: React.ReactNode }) {
         "flex h-screen w-full bg-blue max-sm:relative sm:max-lg:flex-col",
       )}
     >
-      
+      {/* top white bar */}
+      <nav
+        className={cn(
+          "fixed top-0 z-50 w-full h-16 -translate-x-1/2 bg-white border-t border-gray-200 left-1/2",
+        )}
+      ></nav>
       {/* navbar */}
       <nav
         className={cn(
@@ -57,7 +62,7 @@ function Navigation({ children }: { children: React.ReactNode }) {
         </div>
       </nav>
       <div
-        className="h-full w-full"
+        className="h-full w-full mt-16 bg-[#364A71]"
       >
         {children}
       </div>
