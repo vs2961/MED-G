@@ -5,8 +5,8 @@ import { UserContext } from "@/contexts/user";
 
 export const LOGIN_URL = "/login";
 export const HOME_URL = "/home";
+export const PRE_LOGIN_HOME_URL = "/";
 export const NOT_FOUND_URL = "/404-not-found";
-export const NOT_APPROVED_URL = "/create_user_3";
 
 /**
  * An interface for the user's current authentication credentials
@@ -53,9 +53,9 @@ export const useRedirectToHomeIfSignedIn = () => {
 /**
  * A hook that redirects the user to the login page if they are not signed in
  */
-export const useRedirectToLoginIfNotSignedIn = () => {
+export const useRedirectToBaseHomeIfNotSignedIn = () => {
   useRedirection({
     checkShouldRedirect: ({ firebaseUser }) => firebaseUser === null,
-    redirectURL: LOGIN_URL,
+    redirectURL: PRE_LOGIN_HOME_URL,
   });
 };
