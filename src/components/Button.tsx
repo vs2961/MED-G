@@ -1,14 +1,15 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 import { cn } from "../lib/utils";
 
 type ButtonProps = {
   name?: string;
-  label?: string;
+  label?: string | ReactNode;
   className?: string;
   size?: string;
   type?: "button" | "submit" | "reset" | undefined;
   color?: string;
+  rounded?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>
 };
 
@@ -18,6 +19,7 @@ export function Button({
   className,
   size = "",
   color = "",
+  rounded = "rounded-2xl",
   type = "button",
   onClick = () => {}
 }: ButtonProps) {
@@ -30,9 +32,10 @@ export function Button({
         type={type}
         onClick={onClick}
         className={cn(
-          "bg-[#B5F1F9] font-medium rounded-2xl text-sm px-5 py-2.5 text-center me-2 mb-2 shadow shadow-black",
+          "bg-[#B5F1F9] font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 shadow shadow-black",
           size !== "" && size,
-          color !== "" && color
+          color !== "" && color,
+          rounded != "" && rounded,
         )}
       >
         {label}

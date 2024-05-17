@@ -4,14 +4,14 @@
  * Wraps the content of the current page with the navbar
  * Uses the constant in `src/constants` to populate the actual sidebar
  */
-import { Poppins } from "next/font/google";
-import Image from "next/image";
+
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import React from "react";
 
 import { navigation } from "../constants/navigation";
 import { cn } from "../lib/utils";
+import { useWindowSize } from "@/lib/useWindowSize";
 
 // the mapping of elements within navigation
 const Links = () => {
@@ -23,12 +23,10 @@ const Links = () => {
         href={item.href}
         className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group"
         key={i}
-        style={pathName === item.href ? { fill: "white" } : {}}
       >
         <div className="w-5 h-5 mb-2 group-hover:text-blue-600">{item.icon}</div>
         <div
-          className="text-sm text-gray-500  group-hover:text-blue-600 dark:group-hover:text-blue-500"
-          style={pathName === item.href ? { color: "white" } : {}}
+          className={cn("text-sm text-gray-500 group-hover:text-blue-600", pathName === item.href && "text-blue-600")}
         >
           {item.title}
         </div>
@@ -37,20 +35,16 @@ const Links = () => {
   });
 };
 
+
 // Navigation component that wraps the content of the page
 function Navigation({ children }: { children: React.ReactNode }) {
+  const { isTablet } = useWindowSize();
   return (
     <main
       className={cn(
-        "flex h-screen w-full bg-blue max-sm:relative sm:max-lg:flex-col",
+        "flex h-screen w-full bg-blue max-sm:relative sm:max-lg:flex-col overflow-y-auto",
       )}
     >
-      {/* top white bar */}
-      <nav
-        className={cn(
-          "fixed top-0 z-50 w-full h-16 -translate-x-1/2 bg-white border-t border-gray-200 left-1/2",
-        )}
-      ></nav>
       {/* navbar */}
       <nav
         className={cn(
@@ -62,7 +56,7 @@ function Navigation({ children }: { children: React.ReactNode }) {
         </div>
       </nav>
       <div
-        className="h-full w-full mt-16 bg-[#364A71] overflow-y-auto overflow-x-auto"
+        className={cn("h-full w-full bg-[#364A71] overflow-y-auto overflow-x-auto", isTablet && "mt-16")}
       >
         {children}
       </div>

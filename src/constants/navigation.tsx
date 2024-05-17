@@ -14,10 +14,10 @@ type NavigationEntry = {
       href: "/home",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 21H19" stroke="#0368FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M5 21V8M19 21V8" stroke="#0368FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M9 21V13H15V21" stroke="#0368FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M2 10L12 2L22 10" stroke="#0368FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M5 21H19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M5 21V8M19 21V8" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M9 21V13H15V21" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M2 10L12 2L22 10" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
     },
