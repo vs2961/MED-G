@@ -80,17 +80,31 @@ export function Book_4({ setPage, setReason }: BookProps) {
       <h1 className="text-center text-lg text-white shadow-black text-bold mt-3">
         What's the reason for your visit?
       </h1>
-      <div className="mt-5">
+      <div className="mt-5 flex justify-centers mb-8">
         <select
-          className="w-full ml-5 mr-5"
+          className="w-full ml-5 mr-5 rounded-lg h-[50px] text-base"
           onSelect={(value) => setReason(value.currentTarget.name)}
         >
-          <option>
-
-          </option>
-          </select>
+          <option value={"Covid-19"}> Covid-19 </option>
+          <option value={"Cough, wheezing"}> Cough, wheezing </option>
+          <option value={"Ear ache"}> Ear ache </option>
+          <option value={"Flu-like symptoms (fever, aches, chills)"}> Flu-like symptoms (fever, aches, chills) </option>
+          <option value={"Insect bite or sting"}> Insect bite or sting </option>
+          <option value={"Nasal congestion, runny nose, cough, sneezing"}> Nasal congestion, runny nose, cough, sneezing</option>
+          <option value={"Pain, any type (neck, back, foot, leg)"}> Pain, any type (neck, back, foot, leg)</option>
+          <option value={"Prescription refill"}> Prescription refill </option>
+          <option value={"Rash, skin issue"}> Rash, skin issue </option>
+          <option value={"Sinus symptoms"}> Sinus symptoms </option>
+          <option value={"Sore throat"}> Sore throat </option>
+          <option value={"Tobacco Cessation"}> Tobacco Cessation </option>
+          <option value={"Upset stomach, nausea, diarrhea"}> Upset stomach, nausea, diarrhea</option>
+          <option value={"Urination Symptoms"}> Urination Symptoms </option>
+          <option value={"Other"}> Other</option>
+        </select>
       </div>
-      <Button label="Continue" onClick={() => setPage(4)}/>
+      <label htmlFor="image" className="text-[#B5F1F9] font-bold ml-5">Upload images: optional</label> 
+      <input type="file" className="hidden" id="image" name="image"/>
+      <Button className="mt-8 ml-5 mr-5" label="Continue" onClick={() => setPage(4)}/>
     </Navigation>
   );
 }
