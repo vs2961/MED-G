@@ -14,7 +14,7 @@ export function Book_8({ setPage }: BookProps) {
   return (
     <Navigation>
       <div className="grid grid-cols-6 mx-auto h-16">
-        <button onClick={() => setPage(5)} className="ml-5">
+        <button onClick={() => setPage(6)} className="ml-5">
           <svg
             width="24"
             height="24"
@@ -91,7 +91,7 @@ export function Book_8({ setPage }: BookProps) {
       <Button
         className="mt-8 ml-5 mr-5"
         label="Continue"
-        onClick={() => setPage(7)}
+        onClick={() => router.push("/messages")}
       />
     </Navigation>
   );

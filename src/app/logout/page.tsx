@@ -8,8 +8,8 @@ import { useRouter } from "next/navigation";
 const Logout: React.FC = () => {
   signOut(auth);
   const router = useRouter();
-  router.push("/")
-  return null;
+
+  return (<div className="w-full h-full" onClick={() => router.push("/")}>Logout!</div>);
 };
 
 export default Logout;
