@@ -32,7 +32,7 @@ export function Button({
         type={type}
         onClick={onClick}
         className={cn(
-          "bg-[#B5F1F9] font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 shadow shadow-black",
+          "bg-[#B5F1F9] font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 shadow shadow-black w-full",
           size !== "" && size,
           color !== "" && color,
           rounded != "" && rounded,

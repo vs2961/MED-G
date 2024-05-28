@@ -107,6 +107,7 @@ export function Book_2({ setPage, setDoctor, setTime }: BookProps) {
                   <div className="mt-0">
                     <div className="bg-white rounded-lg flex items-center justify-between m-8 mb-0">
                       <h1 className="font-bold m-5">{doctor}</h1>
+                      <div className="w-[100px]">
                       <Button
                         label="Book"
                         className="items-end mr-5 mt-2"
@@ -116,6 +117,7 @@ export function Book_2({ setPage, setDoctor, setTime }: BookProps) {
                           setPage(2);
                         }}
                       />
+                      </div>
                     </div>
                   </div>
                 );
