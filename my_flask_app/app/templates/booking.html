@@ -1,0 +1,16 @@
+from flask import Blueprint, render_template
+from flask_login import login_required, current_user
+
+booking = Blueprint('booking', __name__)
+
+@booking.route('/booking')
+@login_required
+def booking_page():
+    return render_template('booking.html')
+    {% extends "layout.html" %}
+    {% block title %}Booking{% endblock %}
+    {% block content %}
+    <h1>Booking Page</h1>
+    <p>Book your appointment here.</p>
+    {% endblock %}
+    
