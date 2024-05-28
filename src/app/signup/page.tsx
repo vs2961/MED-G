@@ -6,12 +6,13 @@ import { Textfield } from "@/components/TextField";
 import Navigation from "@/components/navigation";
 import { auth } from "@/firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import router from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 const Signup: React.FC = () => {
   const [firebaseError, setFirebaseError] = useState("");
+  const router = useRouter();
   
   const {
     register,
@@ -40,7 +41,7 @@ const Signup: React.FC = () => {
         router.push("/");
       })
       .catch((_) => {
-        setFirebaseError("Invalid login. Please check your username and password.");
+        setFirebaseError("An error was detected. Please check your username and password.");
       });
   };
 
@@ -55,11 +56,11 @@ const Signup: React.FC = () => {
           <Textfield register={register} name="last" label="Last Name" />
           <Textfield register={register} name="email" label="Email Address" />
           <Textfield register={register} name="email_confirm" label="Confirm Email Address" />
-          <Textfield register={register} name="password" label="Password" />
-          <Textfield register={register} name="password_confirm" label="Confirm Password" />
-          <Button name="create" label="Create Account" size="w-60" className="mb-10 mt-5" type="submit" />
+          <Textfield register={register} type="password" name="password" label="Password" />
+          <Textfield register={register} type="password" name="password_confirm" label="Confirm Password" />
+          <Button name="create" label="Create Account" size="w-60" className="mt-5" type="submit" />
         </div>
-        {firebaseError && <h1 className="text-white text-center">{firebaseError}</h1>}
+        {firebaseError && <h1 className="text-white text-center mb-10">{firebaseError}</h1>}
       </form>
     </Navigation>
   );

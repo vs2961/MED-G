@@ -7,13 +7,14 @@ import { useRedirectToHomeIfSignedIn } from "@/hooks/redirect";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 import Link from "next/link";
-import router from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 
 const Login: React.FC = () => {
   const [firebaseError, setFirebaseError] = useState("");
+  const router = useRouter();
 
   const {
     register,
